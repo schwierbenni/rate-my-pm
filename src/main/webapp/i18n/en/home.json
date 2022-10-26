@@ -1,9 +1,10 @@
 {
   "home": {
-    "title": "Welcome, Java Hipster!",
-    "subtitle": "This is your homepage",
+    "title": "Welcome at Rate My PS!",
+    "subtitle": "Here you can rate your practical semester on the basis of a few questions",
     "logged": {
-      "message": "You are logged in as user \"{{username}}\"."
+      "message": "Hello \"{{username}}\"! What are you waiting for?",
+      "link": "Click here for the questionnaire."
     },
     "question": "If you have any question on JHipster:",
     "link": {

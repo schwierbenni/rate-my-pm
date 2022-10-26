@@ -1,12 +1,12 @@
 {
   "global": {
-    "title": "RateMyPM",
+    "title": "RateMyPS",
     "browsehappy": "Sie benutzen einen <strong>veralteten</strong> Browser. Bitte <a href=\"http://browsehappy.com/?locale=de/\">aktualisieren Sie Ihren Browser</a>, um die Benutzerfreundlichkeit zu erhöhen.",
     "menu": {
       "home": "Startseite",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
-        "main": "Entitäten",
+        "main": "Mein Praxissemester",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
@@ -52,8 +52,12 @@
           "suffix": " möchten, versuchen Sie es mit <br/>- Administrator (Name=\"admin\" und Passwort=\"admin\")<br/>- Benutzer (Name=\"user\" und Passwort=\"user\")."
         },
         "register": {
-          "noaccount": "Sie haben noch keinen Zugang?",
-          "link": "Registrieren Sie sich"
+          "noaccount": "Du hast noch keinen Zugang?",
+          "link": "Registriere dich hier"
+        },
+        "toAuthorize": {
+          "notSignedIn": "Du bist noch nicht angemeldet?",
+          "toLogin": "Hier gehts zum Login"
         }
       },
       "error": {
@@ -142,5 +146,6 @@
       "not.image": "Es wird erwartet, dass die Datei ein Bild ist. Die Datei ist jedoch vom Typ \"{{ fileType }}\""
     }
   },
-  "footer": "Dies ist Ihre Fußzeile"
+  "footer-text": "Benedict Schwier 2022",
+  "footer-webblog-link": "Blog für Webentwicklung an der RWU"
 }
