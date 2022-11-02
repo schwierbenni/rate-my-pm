@@ -15,7 +15,9 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
-        <datasource-mapping />
+        <datasource-mapping>
+          <factory-entry name="rate-my-pm" value="b32bc46e-9c10-4173-ae6c-347193efc076" />
+        </datasource-mapping>
         <naming-strategy-map />
       </configuration>
     </facet>
@@ -32,6 +34,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/target/generated-sources/annotations" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/target/generated-test-sources/test-annotations" isTestSource="true" generated="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -217,6 +220,7 @@
     <orderEntry type="library" name="Maven: io.prometheus:simpleclient_tracer_common:0.15.0" level="project" />
     <orderEntry type="library" name="Maven: io.prometheus:simpleclient_tracer_otel_agent:0.15.0" level="project" />
     <orderEntry type="library" name="Maven: io.dropwizard.metrics:metrics-core:4.2.11" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.testcontainers:postgresql:1.16.3" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-devtools:2.7.3" level="project" />
     <orderEntry type="library" name="Maven: com.h2database:h2:2.1.214" level="project" />
   </component>
