@@ -1,0 +1,28 @@
+{
+  "applications": "*",
+  "changelogDate": "20221109122019",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "question",
+  "fields": [
+    {
+      "fieldName": "questionText",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Question",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "questionaire",
+      "otherEntityRelationshipName": "question",
+      "relationshipName": "questionaire",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

@@ -8,7 +8,7 @@
       <span id="home-logged-message" *ngIf="account" jhiTranslate="home.logged.message" [translateValues]="{ username: account.login }">
         Hallo "{{ account.login }}"</span
       >
-      <a class="alert-link" routerLink="entities" jhiTranslate="home.logged.link">Hier gehts zum Fragebogen</a>
+      <a class="alert-link" routerLink="questionaire" jhiTranslate="home.logged.link">Hier gehts zum Fragebogen</a>
     </div>
 
     <div class="alert alert-warning" *ngSwitchCase="false">

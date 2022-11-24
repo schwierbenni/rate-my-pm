@@ -1,0 +1,156 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-questionaire-heading"
+        data-cy="QuestionaireCreateUpdateHeading"
+        jhiTranslate="rateMyPmApp.questionaire.home.createOrEditLabel"
+      >
+        Questionaire erstellen oder bearbeiten
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input
+            type="number"
+            class="form-control border-secondary"
+            name="id"
+            id="field_id"
+            data-cy="id"
+            formControlName="id"
+            [readonly]="true"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="rateMyPmApp.questionaire.name" for="field_name">Name</label>
+          <input type="text" class="form-control border-secondary" name="name" id="field_name" data-cy="name" formControlName="name" />
+          <div *ngIf="editForm.get('name')!.invalid && (editForm.get('name')!.dirty || editForm.get('name')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('name')?.errors?.required" jhiTranslate="entity.validation.required">
+              Dieses Feld wird benötigt.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="rateMyPmApp.questionaire.description" for="field_description">Description</label>
+          <input
+            type="text"
+            class="form-control border-secondary"
+            name="description"
+            id="field_description"
+            data-cy="description"
+            formControlName="description"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="rateMyPmApp.questionaire.companyName" for="field_companyName">Company Name</label>
+          <input
+            type="text"
+            class="form-control border-secondary"
+            name="companyName"
+            id="field_companyName"
+            data-cy="companyName"
+            formControlName="companyName"
+          />
+          <div *ngIf="editForm.get('companyName')!.invalid && (editForm.get('companyName')!.dirty || editForm.get('companyName')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('companyName')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              Dieses Feld wird benötigt.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label border-primary" jhiTranslate="rateMyPmApp.questionaire.gender" for="field_gender">Gender</label>
+          <select class="form-control border-secondary" name="gender" formControlName="gender" id="field_gender" data-cy="gender">
+            <option [ngValue]="null">{{ 'rateMyPmApp.Gender.null' | translate }}</option>
+            <option *ngFor="let gender of genderValues" [value]="gender">{{ 'rateMyPmApp.Gender.' + gender | translate }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="rateMyPmApp.questionaire.course" for="field_course">Course</label>
+          <input
+            type="text"
+            class="form-control border-secondary"
+            name="course"
+            id="field_course"
+            data-cy="course"
+            formControlName="course"
+          />
+          <div *ngIf="editForm.get('course')!.invalid && (editForm.get('course')!.dirty || editForm.get('course')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('course')?.errors?.required" jhiTranslate="entity.validation.required">
+              Dieses Feld wird benötigt.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="rateMyPmApp.questionaire.semester" for="field_semester">Semester</label>
+          <input
+            type="text"
+            class="form-control border-secondary"
+            name="semester"
+            id="field_semester"
+            data-cy="semester"
+            formControlName="semester"
+          />
+          <div *ngIf="editForm.get('semester')!.invalid && (editForm.get('semester')!.dirty || editForm.get('semester')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('semester')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              Dieses Feld wird benötigt.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="rateMyPmApp.questionaire.department" for="field_department">Department</label>
+          <input
+            type="text"
+            class="form-control border-secondary"
+            name="department"
+            id="field_department"
+            data-cy="department"
+            formControlName="department"
+          />
+          <div *ngIf="editForm.get('department')!.invalid && (editForm.get('department')!.dirty || editForm.get('department')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('department')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              Dieses Feld wird benötigt.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Abbrechen</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Speichern</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

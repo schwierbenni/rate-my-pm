@@ -1,0 +1,89 @@
+<div class="d-flex border-secondary rounded-4 mb-3 justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3">
+          <label [hidden]="true" class="form-label" jhiTranslate="rateMyPmApp.answer.questionText" for="field_questionText"
+            >Question Text</label
+          >
+          <div
+            type="text"
+            class="form-control text-center large-font"
+            id="field_questionText"
+            data-cy="questionText"
+            formControlName="questionText"
+            ngDefaultControl
+          >
+            {{ answer?.questionText }}
+          </div>
+        </div>
+
+        <div class="row mb-3" (change)="save()">
+          <label [hidden]="true" class="form-label" jhiTranslate="rateMyPmApp.answer.rating" for="field_rating">Rating</label>
+          <input
+            type="range"
+            step="0.5"
+            value="3"
+            max="5"
+            min="1"
+            class="form-control border-secondary rounded-pill"
+            name="rating"
+            id="field_rating"
+            data-cy="rating"
+            formControlName="rating"
+          />
+          <span
+            *ngIf="
+              editForm.controls.rating.getRawValue() === 3 ||
+              editForm.controls.rating.getRawValue() === 2.5 ||
+              editForm.controls.rating.getRawValue() === 3.5
+            "
+            class="center text-warning lead"
+          >
+            {{ editForm.controls.rating.getRawValue() }}
+            <fa-icon icon="face-meh"></fa-icon>
+          </span>
+          <span
+            *ngIf="
+              editForm.controls.rating.getRawValue() === 2 ||
+              editForm.controls.rating.getRawValue() === 1.5 ||
+              editForm.controls.rating.getRawValue() === 1
+            "
+            class="center text-danger lead"
+          >
+            {{ editForm.controls.rating.getRawValue() }}
+            <fa-icon icon="face-sad-cry"></fa-icon>
+          </span>
+          <span
+            *ngIf="
+              editForm.controls.rating.getRawValue() === 4 ||
+              editForm.controls.rating.getRawValue() === 4.5 ||
+              editForm.controls.rating.getRawValue() === 5
+            "
+            class="center text-success lead"
+          >
+            {{ editForm.controls.rating.getRawValue() }}
+            <fa-icon icon="face-laugh-beam"></fa-icon>
+          </span>
+        </div>
+
+        <div class="row mb-3" (change)="save()">
+          <label class="form-label center" jhiTranslate="rateMyPmApp.answer.optionalMessage" for="field_optionalMessage"
+            >Optional Message</label
+          >
+          <input
+            type="text"
+            class="form-control border-secondary rounded-pill"
+            name="optionalMessage"
+            id="field_optionalMessage"
+            data-cy="optionalMessage"
+            formControlName="optionalMessage"
+          />
+        </div>
+      </div>
+      <br />
+    </form>
+  </div>
+</div>

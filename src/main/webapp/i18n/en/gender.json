@@ -1,0 +1,10 @@
+{
+  "rateMyPmApp": {
+    "Gender": {
+      "null": "",
+      "MALE": "Male",
+      "FEMALE": "Female",
+      "DIVERS": "Divers"
+    }
+  }
+}

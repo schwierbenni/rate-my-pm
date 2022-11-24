@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="questionaire">
+      <h2 data-cy="questionaireDetailsHeading"><span jhiTranslate="rateMyPmApp.questionaire.detail.title">Questionaire</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ questionaire.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="rateMyPmApp.questionaire.name">Name</span></dt>
+        <dd>
+          <span>{{ questionaire.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="rateMyPmApp.questionaire.description">Description</span></dt>
+        <dd>
+          <span>{{ questionaire.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="rateMyPmApp.questionaire.companyName">Company Name</span></dt>
+        <dd>
+          <span>{{ questionaire.companyName }}</span>
+        </dd>
+        <dt><span jhiTranslate="rateMyPmApp.questionaire.gender">Gender</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'rateMyPmApp.Gender.' + questionaire.gender }}">{{ questionaire.gender }}</span>
+        </dd>
+        <dt><span jhiTranslate="rateMyPmApp.questionaire.course">Course</span></dt>
+        <dd>
+          <span>{{ questionaire.course }}</span>
+        </dd>
+        <dt><span jhiTranslate="rateMyPmApp.questionaire.semester">Semester</span></dt>
+        <dd>
+          <span>{{ questionaire.semester }}</span>
+        </dd>
+        <dt><span jhiTranslate="rateMyPmApp.questionaire.department">Department</span></dt>
+        <dd>
+          <span>{{ questionaire.department }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Zurück</span>
+      </button>
+
+      <button type="button" [routerLink]="['/questionaire', questionaire.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Bearbeiten</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+{
+  "applications": "*",
+  "changelogDate": "20221109122018",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "answer",
+  "fields": [
+    {
+      "fieldName": "questionText",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "rating",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "optionalMessage",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Answer",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "questionaire",
+      "otherEntityRelationshipName": "answer",
+      "relationshipName": "questionare",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

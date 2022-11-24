@@ -1,0 +1,125 @@
+<div>
+  <h2 class="center" id="page-heading" data-cy="QuestionaireHeading">
+    <span jhiTranslate="rateMyPmApp.questionaire.home.title">Questionaires</span>
+
+    <div *ngIf="!questionaires?.length" class="d-flex justify-content-end">
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-questionaire"
+        [routerLink]="['/questionaire/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="rateMyPmApp.questionaire.home.createLabel"> Questionaire erstellen </span>
+      </button>
+    </div>
+    <ng-container *ngFor="let questionaire of questionaires">
+      <div *ngIf="questionaires?.length === 1" class="d-flex justify-content-center">
+        <button
+          type="submit"
+          [routerLink]="['/questionaire', questionaire.id, 'questions']"
+          class="btn btn-success"
+          data-cy="entityQuestionAnswerButton"
+        >
+          <fa-icon icon="sliders"></fa-icon>
+          <span jhiTranslate="rateMyPmApp.questionaire.startQuestions">Fragen beantworten</span>
+        </button>
+      </div>
+    </ng-container>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="questionaires?.length === 0">
+    <span jhiTranslate="rateMyPmApp.questionaire.home.notFound">Keine Questionaires gefunden</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="questionaires && questionaires.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="name">
+            <div class="d-flex">
+              <span jhiTranslate="rateMyPmApp.questionaire.name">Name</span>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="description">
+            <div class="d-flex">
+              <span jhiTranslate="rateMyPmApp.questionaire.description">Description</span>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="companyName">
+            <div class="d-flex">
+              <span jhiTranslate="rateMyPmApp.questionaire.companyName">Company Name</span>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="gender">
+            <div class="d-flex">
+              <span jhiTranslate="rateMyPmApp.questionaire.gender">Gender</span>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="course">
+            <div class="d-flex">
+              <span jhiTranslate="rateMyPmApp.questionaire.course">Course</span>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="semester">
+            <div class="d-flex">
+              <span jhiTranslate="rateMyPmApp.questionaire.semester">Semester</span>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="department">
+            <div class="d-flex">
+              <span jhiTranslate="rateMyPmApp.questionaire.department">Department</span>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody
+        infinite-scroll
+        (scrolled)="loadPage(page + 1)"
+        [infiniteScrollDisabled]="page - 1 >= links['last']"
+        [infiniteScrollDistance]="0"
+      >
+        <tr *ngFor="let questionaire of questionaires; trackBy: trackId" data-cy="entityTable">
+          <td>{{ questionaire.name }}</td>
+          <td>{{ questionaire.description }}</td>
+          <td>{{ questionaire.companyName }}</td>
+          <td jhiTranslate="{{ 'rateMyPmApp.Gender.' + questionaire.gender }}">{{ questionaire.gender }}</td>
+          <td>{{ questionaire.course }}</td>
+          <td>{{ questionaire.semester }}</td>
+          <td>{{ questionaire.department }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/questionaire', questionaire.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Details</span>
+              </button>
+              <button
+                type="submit"
+                [routerLink]="['/questionaire', questionaire.id, 'edit']"
+                class="btn btn-sm btn-primary"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit"> Questionaire bearbeiten </span>
+              </button>
+              <button type="submit" (click)="delete(questionaire)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Löschen</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

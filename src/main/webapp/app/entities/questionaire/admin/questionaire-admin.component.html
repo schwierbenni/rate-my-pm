@@ -1,0 +1,68 @@
+<div>
+  <h2 class="center" jhiTranslate="rateMyPmApp.questionaire.questionManageID"></h2>
+  <ng-container *ngFor="let questionaire of questionaires">
+    <div class="border-secondary rounded-4 mt-3">
+      <div>
+        <dl class="center">
+          <dt><span jhiTranslate="rateMyPmApp.questionaire.id">ID</span></dt>
+          <dd>
+            <span>{{ questionaire.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="rateMyPmApp.questionaire.name">Professor Name</span></dt>
+          <dd>
+            <span>{{ questionaire.name }}</span>
+          </dd>
+          <dt><span jhiTranslate="rateMyPmApp.questionaire.companyName">companyName</span></dt>
+          <dd>
+            <span>{{ questionaire.companyName }}</span>
+          </dd>
+          <dt><span jhiTranslate="rateMyPmApp.questionaire.gender">gender</span></dt>
+          <dd>
+            <span>{{ questionaire.gender }}</span>
+          </dd>
+          <dt><span jhiTranslate="rateMyPmApp.questionaire.semester">semester</span></dt>
+          <dd>
+            <span>{{ questionaire.semester }}</span>
+          </dd>
+          <dt><span jhiTranslate="rateMyPmApp.questionaire.department">department</span></dt>
+          <dd>
+            <span>{{ questionaire.department }}</span>
+          </dd>
+        </dl>
+      </div>
+      <div class="d-flex">
+        <table class="table table-sm table-responsive">
+          <thead>
+            <tr>
+              <th class="justify-content-start text-truncate">
+                <div class="d-flex">
+                  <span jhiTranslate="rateMyPmApp.answer.home.title"></span>
+                </div>
+              </th>
+              <th class="text-truncate">
+                <div class="d-flex">
+                  <span></span>
+                </div>
+              </th>
+              <th class="text-truncate justify-content-end">
+                <div class="d-flex">
+                  <span><fa-icon icon="divide"></fa-icon></span>
+                  {{ questionaire?.totalRating }}
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let answer of answers">
+              <tr class="flex-fill" *ngIf="answer.questionare?.id === questionaire?.id">
+                <td>{{ answer?.questionText }}</td>
+                <td>{{ answer?.optionalMessage }}</td>
+                <td>{{ answer?.rating }}</td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </ng-container>
+</div>

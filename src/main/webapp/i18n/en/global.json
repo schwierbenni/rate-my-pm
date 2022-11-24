@@ -7,6 +7,11 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "My internship",
+        "questionaire": "Questionaire",
+        "answer": "Answer",
+        "question": "Question",
+        "questionManage": "Manage questions",
+        "questionaireManage": "Manage questionaire",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

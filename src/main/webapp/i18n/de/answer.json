@@ -1,0 +1,27 @@
+{
+  "rateMyPmApp": {
+    "answer": {
+      "home": {
+        "title": "Antworten",
+        "refreshListLabel": "Liste aktualisieren",
+        "createLabel": "Antwort erstellen",
+        "createOrEditLabel": "Antwort erstellen oder bearbeiten",
+        "notFound": "Keine Antworten gefunden"
+      },
+      "created": "Antwort erstellt mit ID {{ param }}",
+      "updated": "Antwort aktualisiert mit ID {{ param }}",
+      "deleted": "Antwort gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Antwort {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Antwort"
+      },
+      "id": "ID",
+      "questionText": "Fragentext",
+      "rating": "Rating",
+      "optionalMessage": "Kommentar (optional)",
+      "questionare": "Fragebogen"
+    }
+  }
+}

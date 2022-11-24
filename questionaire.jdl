@@ -1,0 +1,38 @@
+entity Questionaire {
+	name String required,
+	description String,
+    companyName String required,
+    gender Gender,
+    course String required,
+    semester String required,
+    department String required,
+    totalRating Float
+}
+
+entity Answer {
+	questionText String required,
+	rating Float,
+    optionalMessage String
+}
+
+entity Question {
+	questionText String required
+}
+
+enum Gender {
+	MALE (Male),
+    FEMALE (Female),
+    DIVERS (Divers)
+}
+
+relationship OneToOne {
+	Questionaire{user(login)} to User
+}
+
+relationship ManyToOne {
+    Question to Questionaire{question}
+    Answer{Questionare(name)} to Questionaire{answer}
+}
+
+paginate * with infinite-scroll
+

@@ -1,0 +1,38 @@
+{
+  "rateMyPmApp": {
+    "questionaire": {
+      "home": {
+        "title": "Fragebögen",
+        "refreshListLabel": "Liste aktualisieren",
+        "createLabel": "Meinen Fragebogen erstellen",
+        "createOrEditLabel": "Meinen Fragebogen erstellen oder bearbeiten",
+        "notFound": "Keine Fragebögen gefunden"
+      },
+      "created": "Fragebogen erstellt mit ID {{ param }}",
+      "questionaireWithId": "Fragebogen mit ID",
+      "updated": "Fragebogen aktualisiert mit ID {{ param }}",
+      "deleted": "Fragebogen gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Fragebogen {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Fragebogen"
+      },
+      "id": "ID",
+      "name": "Name des betreuenden Professors",
+      "description": "Hier kannst du (falls nötig) noch eine kurze Beschreibung hinzufügen",
+      "companyName": "In welchem Unternehmen warst du?",
+      "gender": "Bitte wähle dein Geschlecht aus",
+      "course": "Welchen Studiengang belegst du?",
+      "semester": "Wann hast du dein Praxissemester gemacht? (z.B WS21/22, SS22)",
+      "department": "In welcher Abteilung hast du gearbeitet?",
+      "totalRating": "Durchschnitt",
+      "user": "User",
+      "question": "Frage",
+      "answer": "Antwort",
+      "startQuestions": "Mit der Bewertung starten",
+      "complete": "Bewertung abschließen",
+      "questionManageID": "Alle Fragebögen"
+    }
+  }
+}

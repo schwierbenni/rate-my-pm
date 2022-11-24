@@ -1,0 +1,25 @@
+{
+  "rateMyPmApp": {
+    "question": {
+      "home": {
+        "title": "Fragen",
+        "refreshListLabel": "Liste aktualisieren",
+        "createLabel": "Frage erstellen",
+        "createOrEditLabel": "Frage erstellen oder bearbeiten",
+        "notFound": "Keine Fragen gefunden"
+      },
+      "created": "Frage erstellt mit ID {{ param }}",
+      "updated": "Frage aktualisiert mit ID {{ param }}",
+      "deleted": "Frage gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Frage {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Frage"
+      },
+      "id": "ID",
+      "questionText": "Fragentext",
+      "questionaire": "Fragebogen"
+    }
+  }
+}

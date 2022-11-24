@@ -1,4 +1,4 @@
-<nav data-cy="navbar" class="navbar navbar-dark navbar-expand-md bg-primary">
+<nav data-cy="navbar" class="navbar navbar-dark navbar-expand-lg bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand logo" routerLink="/" (click)="collapseNavbar()">
       <span class="logo-img"></span>
@@ -28,23 +28,13 @@
           </a>
         </li>
         <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
-        <li
-          *ngSwitchCase="true"
-          ngbDropdown
-          class="nav-item dropdown pointer"
-          display="dynamic"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-        >
-          <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu" data-cy="entity">
+        <li [routerLinkActiveOptions]="{ exact: true }" class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/questionaire" (click)="collapseNavbar()">
             <span>
               <fa-icon icon="star"></fa-icon>
-              <span jhiTranslate="global.menu.entities.main">Entitäten</span>
+              <span jhiTranslate="global.menu.entities.main">Fragebogen</span>
             </span>
           </a>
-          <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="entity-menu">
-            <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
-          </ul>
         </li>
         <li
           *jhiHasAnyAuthority="'ROLE_ADMIN'"
@@ -61,6 +51,30 @@
             </span>
           </a>
           <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="admin-menu">
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="questionaire/questionaireManage"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                (click)="collapseNavbar()"
+              >
+                <fa-icon icon="clipboard-question" [fixedWidth]="true"></fa-icon>
+                <span jhiTranslate="global.menu.entities.questionaireManage">Questionaires</span>
+              </a>
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="question"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                (click)="collapseNavbar()"
+              >
+                <fa-icon icon="question" [fixedWidth]="true"></fa-icon>
+                <span jhiTranslate="global.menu.entities.questionManage">Question</span>
+              </a>
+            </li>
             <li>
               <a class="dropdown-item" routerLink="admin/user-management" routerLinkActive="active" (click)="collapseNavbar()">
                 <fa-icon icon="users" [fixedWidth]="true"></fa-icon>

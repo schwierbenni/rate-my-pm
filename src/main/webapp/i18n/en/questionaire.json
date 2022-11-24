@@ -1,0 +1,38 @@
+{
+  "rateMyPmApp": {
+    "questionaire": {
+      "home": {
+        "title": "Questionaires",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Questionaire",
+        "createOrEditLabel": "Create or edit a Questionaire",
+        "notFound": "No Questionaires found"
+      },
+      "created": "A new Questionaire is created with identifier {{ param }}",
+      "questionaireWithId": "Questionaire with identifier",
+      "updated": "A Questionaire is updated with identifier {{ param }}",
+      "deleted": "A Questionaire is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Questionaire {{ id }}?"
+      },
+      "detail": {
+        "title": "Questionaire"
+      },
+      "id": "ID",
+      "name": "Name of the supervising professor",
+      "description": "You can add a short description here, if necessary.",
+      "companyName": "Which company were you in?",
+      "gender": "Please select your gender",
+      "course": "Which course are you enrolled in?",
+      "semester": "When did you do your practical semester? (e.g. WS21/22, SS22)",
+      "department": "Which department did you work in?",
+      "totalRating": "Rating average",
+      "user": "User",
+      "question": "Question",
+      "answer": "Answer",
+      "startQuestions": "Start Rating",
+      "complete": "Complete Rating",
+      "questionManageID": "All questionaires"
+    }
+  }
+}
