@@ -5,14 +5,12 @@ import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { from } from 'rxjs';
 import { IAnswer } from '../answer.model';
-import { QuestionaireService } from 'app/entities/questionaire/service/questionaire.service';
 
 import { AnswerUpdateComponent } from './answer-update.component';
 
 describe('Answer Management Update Component', () => {
   let comp: AnswerUpdateComponent;
   let fixture: ComponentFixture<AnswerUpdateComponent>;
-  let questionaireService: QuestionaireService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -32,7 +30,6 @@ describe('Answer Management Update Component', () => {
       .compileComponents();
 
     fixture = TestBed.createComponent(AnswerUpdateComponent);
-    questionaireService = TestBed.inject(QuestionaireService);
 
     comp = fixture.componentInstance;
   });

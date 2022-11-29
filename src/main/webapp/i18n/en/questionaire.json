@@ -32,7 +32,13 @@
       "answer": "Answer",
       "startQuestions": "Start Rating",
       "complete": "Complete Rating",
-      "questionManageID": "All questionaires"
+      "questionManageID": "All questionaires",
+      "questionaireCompleteText": "Thank you for taking the time!",
+      "happyText": "You seem to be satisfied with your experience!",
+      "badText": "You seem to be very unhappy with your experience!",
+      "mehText": "You seem to have mixed feelings about your experience!",
+      "ratingText": "You have an average rating of ",
+      "revealTotalRating": "Reveal result"
     }
   }
 }

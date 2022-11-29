@@ -24,7 +24,7 @@
       "companyName": "In welchem Unternehmen warst du?",
       "gender": "Bitte wähle dein Geschlecht aus",
       "course": "Welchen Studiengang belegst du?",
-      "semester": "Wann hast du dein Praxissemester gemacht? (z.B WS21/22, SS22)",
+      "semester": "Wann hast du dein Praxissemester gemacht?",
       "department": "In welcher Abteilung hast du gearbeitet?",
       "totalRating": "Durchschnitt",
       "user": "User",
@@ -32,7 +32,13 @@
       "answer": "Antwort",
       "startQuestions": "Mit der Bewertung starten",
       "complete": "Bewertung abschließen",
-      "questionManageID": "Alle Fragebögen"
+      "questionManageID": "Alle Fragebögen",
+      "questionaireCompleteText": "Vielen Dank für deine Zeit!",
+      "happyText": "Du scheinst mit dem Ergebnis zufrieden zu sein.",
+      "badText": "Du scheinst sehr unzufrieden zu sein.",
+      "mehText": "Deine Erfahrung scheint durchwachsen zu sein.",
+      "ratingText": "Du hast ein Durchschnittsrating von ",
+      "revealTotalRating": "Ergebnis anzeigen"
     }
   }
 }

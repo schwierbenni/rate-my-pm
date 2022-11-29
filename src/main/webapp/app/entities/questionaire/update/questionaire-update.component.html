@@ -102,6 +102,7 @@
             id="field_semester"
             data-cy="semester"
             formControlName="semester"
+            [placeholder]="'z.B WS21/22, SS22'"
           />
           <div *ngIf="editForm.get('semester')!.invalid && (editForm.get('semester')!.dirty || editForm.get('semester')!.touched)">
             <small

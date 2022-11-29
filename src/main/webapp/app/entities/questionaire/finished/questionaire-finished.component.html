@@ -1,0 +1,43 @@
+<div class="center">
+  <img class="image-20" src="../../content/images/rwu-logo.png" alt="RWU" />
+  <h1><span jhiTranslate="rateMyPmApp.questionaire.questionaireCompleteText">Herzlich Willkommen bei Rate My PS!</span></h1>
+
+  <div [hidden]="!this.ratingVar">
+    <div *ngIf="this.ratingVar === 1">
+      <div class="large-font" jhiTranslate="rateMyPmApp.questionaire.badText"></div>
+      <div jhiTranslate="rateMyPmApp.questionaire.ratingText"></div>
+      <span class="large-font text-danger">
+        <fa-icon icon="star"></fa-icon>
+        {{ this.questionaire?.totalRating }}
+        <fa-icon icon="star"></fa-icon
+      ></span>
+    </div>
+    <div *ngIf="this.ratingVar === 2">
+      <div class="large-font" jhiTranslate="rateMyPmApp.questionaire.mehText"></div>
+      <div jhiTranslate="rateMyPmApp.questionaire.ratingText"></div>
+      <span class="large-font text-warning">
+        <fa-icon icon="star"></fa-icon>
+        {{ this.questionaire?.totalRating }}
+        <fa-icon icon="star"></fa-icon
+      ></span>
+    </div>
+    <div *ngIf="this.ratingVar === 3">
+      <div class="large-font" jhiTranslate="rateMyPmApp.questionaire.happyText"></div>
+      <div jhiTranslate="rateMyPmApp.questionaire.ratingText"></div>
+      <span class="large-font text-success">
+        <fa-icon icon="star"></fa-icon>
+        {{ this.questionaire?.totalRating }}
+        <fa-icon icon="star"></fa-icon
+      ></span>
+    </div>
+  </div>
+  <button
+    jhiTranslate="rateMyPmApp.questionaire.revealTotalRating"
+    [hidden]="this.ratingVar"
+    type="button"
+    class="btn btn-success"
+    (click)="displayTotalRatingByAverage()"
+  >
+    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Reveal Total Rating</span>
+  </button>
+</div>

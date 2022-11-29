@@ -27,12 +27,6 @@
     <table class="table table-striped" aria-describedby="page-heading">
       <thead>
         <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
-          <th scope="col" jhiSortBy="id">
-            <div class="d-flex">
-              <span jhiTranslate="global.field.id">ID</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
           <th scope="col" jhiSortBy="questionText">
             <div class="d-flex">
               <span jhiTranslate="rateMyPmApp.question.questionText">Question Text</span>
@@ -49,9 +43,6 @@
         [infiniteScrollDistance]="0"
       >
         <tr *ngFor="let question of questions; trackBy: trackId" data-cy="entityTable">
-          <td>
-            <a [routerLink]="['/question', question.id, 'view']">{{ question.id }}</a>
-          </td>
           <td>{{ question.questionText }}</td>
 
           <td class="text-end">

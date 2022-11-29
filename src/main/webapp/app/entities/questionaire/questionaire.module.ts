@@ -8,6 +8,7 @@ import { QuestionaireRoutingModule } from './route/questionaire-routing.module';
 import { QuestionaireQuestionsComponent } from './questions/questionaire-questions.component';
 import { QuestionaireAdminComponent } from './admin/questionaire-admin.component';
 import { AnswerModule } from '../answer/answer.module';
+import { QuestionaireFinishedComponent } from './finished/questionaire-finished.component';
 
 @NgModule({
   imports: [SharedModule, QuestionaireRoutingModule, AnswerModule],
@@ -18,6 +19,7 @@ import { AnswerModule } from '../answer/answer.module';
     QuestionaireDeleteDialogComponent,
     QuestionaireQuestionsComponent,
     QuestionaireAdminComponent,
+    QuestionaireFinishedComponent,
   ],
 })
 export class QuestionaireModule {}

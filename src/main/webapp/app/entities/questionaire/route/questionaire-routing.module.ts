@@ -9,6 +9,7 @@ import { QuestionaireRoutingResolveService } from './questionaire-routing-resolv
 import { ASC } from 'app/config/navigation.constants';
 import { QuestionaireQuestionsComponent } from '../questions/questionaire-questions.component';
 import { QuestionaireAdminComponent } from '../admin/questionaire-admin.component';
+import { QuestionaireFinishedComponent } from '../finished/questionaire-finished.component';
 
 const questionaireRoute: Routes = [
   {
@@ -54,6 +55,14 @@ const questionaireRoute: Routes = [
   {
     path: 'questionaireManage',
     component: QuestionaireAdminComponent,
+    resolve: {
+      questionaire: QuestionaireRoutingResolveService,
+    },
+    canActivate: [UserRouteAccessService],
+  },
+  {
+    path: ':id/finished',
+    component: QuestionaireFinishedComponent,
     resolve: {
       questionaire: QuestionaireRoutingResolveService,
     },
